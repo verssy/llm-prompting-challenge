@@ -1,0 +1,18 @@
+# Test 1. comments and line breakes
+
+# Subtest. Line break via \\ symbol
+
+a@a    \
+b@b \
+c@c
+
+# expect: a@a b@b c@c
+
+# Subtest. Two separate inputs
+
+a@a
+b@b c@c
+
+# expect:
+# a@a
+# b@b c@c

@@ -1,0 +1,64 @@
+# Test 2. Grouping
+
+# Subtest. union for same entity
+
+a@a a@b
+
+# expect: a@a,b
+
+a@a,b=B a@b c@c
+
+# expect: a@a,b=B,b c@c
+
+# Subtest. grouping several entities
+
+{a@a a@b}
+
+# expect: a@a,b
+
+{a@a b@b}
+
+# expect: a@a b@b
+
+# Subtest. cartesian product
+
+[a@a b@b c@c] [d@d]
+
+# expect:
+# a@a d@d
+# b@b d@d
+# c@c d@d
+
+# Subtest. cartesian product + grouping + union
+
+a@a_common  \
+[{a@a b@b}  \
+ {a@A b@B}]
+
+# expect:
+# a@a_common,a b@b
+# a@a_common,A b@B
+
+# Subtest. several cartesian products
+
+a@a_common  \
+[{a@a b@b}  \
+ {a@A b@B}] \
+[{c@c d@d}  \
+ {c@C d@D}]
+
+# expect:
+# a@a_common,a b@b c@c d@d
+# a@a_common,a b@b c@C d@D
+# a@a_common,A b@B c@c d@d
+# a@a_common,A b@B c@C d@D
+
+# Subtest. common argument after cartesian product
+
+[a@a b@b {c@c d@d}] \
+a@a_common
+
+# expect:
+# a@a,a_common
+# b@b a@a_common
+# c@c d@d a@a_common
