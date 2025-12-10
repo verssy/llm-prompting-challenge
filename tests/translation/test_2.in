@@ -62,3 +62,15 @@ a@a_common
 # a@a,a_common
 # b@b a@a_common
 # c@c d@d a@a_common
+
+# Subtest. empty args
+
+a@ b@b
+
+# expect: a@ b@b
+
+[a@ a@a] b@b
+
+# expect:
+# a@ b@b
+# a@a b@b

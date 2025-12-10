@@ -14,3 +14,6 @@ a@a_common,A b@B c@C d@D
 a@a,a_common
 b@b a@a_common
 c@c d@d a@a_common
+a@ b@b
+a@ b@b
+a@a b@b
