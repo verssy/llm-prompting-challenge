@@ -13,6 +13,7 @@ running tests for: solution.py ...
 -------
 test_1: [PASS  ]
 test_2: [PASS  ]
+test_3L [PASS  ]
 -------
-Results: 2 passed, 0 failed
+Results: 3 passed, 0 failed
 ```
